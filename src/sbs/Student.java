@@ -1,12 +1,15 @@
 package sbs;
 
-import java.util.ArrayList;
+public class Student {
 
-class Student {
-	ArrayList<Integer> a = new ArrayList<>();
-
-	String name;
-	String num;
+	private String name;
+	private String num;
+	
+	public Student(String name, String num) {
+		super();
+		this.name = name;
+		this.num = num;
+	}
 
 	public String getName() {
 		return name;

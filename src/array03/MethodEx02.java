@@ -28,5 +28,4 @@ public class MethodEx02 {
 		°¨¼Ò(data);
 		System.out.println("data.num : " + data.num);
 	}
-
 }
