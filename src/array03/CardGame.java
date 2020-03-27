@@ -9,11 +9,7 @@ public class CardGame {
 
 		Random ran = new Random();
 		Scanner sc = new Scanner(System.in);
-		try {
 
-		} catch (Exception e) {
-			System.out.println("배열의 크기를 넘어갔습니다.");
-		}
 		while (true) {
 			int r = ran.nextInt(100); // 랜덤
 			int input = 0; // 입력값

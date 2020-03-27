@@ -13,8 +13,8 @@ public class BaseBallA {
 		int score = 0;
 		while (true) {
 			int input = 0;// 입력값
-			int r = ran.nextInt(5);// 0~4 투수랜덤
-			int r2 = ran.nextInt(5);// 0~4 홈런랜덤
+			int r = 0;// 0~4 투수랜덤
+			int r2 = 0;// 0~4 홈런랜덤
 
 			int runner = 0;// 주자
 			int ball = 0;// 볼
