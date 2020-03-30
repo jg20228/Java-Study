@@ -1,11 +1,25 @@
 package stars;
 
+import java.io.ObjectInputStream.GetField;
+
 //다크템플러 Dark Templer, 리버 River
 
 //오버로딩
-class Zealot {
-	final String NAME;
-	int hp;
+abstract class Protoss {
+	abstract public String getNAME();
+	//abstract public String setNAME(); final이라서 변경불가 
+
+	abstract public int getHp();
+	abstract public void setHp(int hp);
+	
+	abstract public int getAttack();
+	abstract public void setAttack(int attack);
+
+}
+
+class Zealot extends Protoss {
+	private final String NAME;
+	private int hp;
 	static int attack = 10;
 
 	public Zealot(String name) {
@@ -13,11 +27,32 @@ class Zealot {
 		this.hp = 100;
 	}
 
+	public String getNAME() {
+		return NAME;
+	}
+
+	public int getHp() {
+		return this.hp;
+	}
+
+	public void setHp(int hp) {
+		this.hp = hp;
+	}
+
+	public int getAttack() {
+		return attack;
+	}
+
+	@Override
+	public void setAttack(int attack) {
+		this.attack = attack;
+	}
+
 }
 
-class Dragoon {
-	final String NAME;
-	int hp;
+class Dragoon extends Protoss {
+	private final String NAME;
+	private int hp;
 	static int attack = 15;
 
 	public Dragoon(String name) {
@@ -25,11 +60,33 @@ class Dragoon {
 		this.hp = 100;
 	}
 
+	public String getNAME() {
+		return NAME;
+	}
+
+	public int getHp() {
+		return this.hp;
+	}
+
+	public void setHp(int hp) {
+		this.hp = hp;
+	}
+
+	public int getAttack() {
+		return attack;
+	}
+
+	@Override
+	public void setAttack(int attack) {
+		this.attack = attack;
+		
+	}
+
 }
 
-class DarkTempler {
-	final String NAME;
-	int hp;
+class DarkTempler extends Protoss {
+	private final String NAME;
+	private int hp;
 	static int attack = 50;
 
 	public DarkTempler(String name) {
@@ -37,11 +94,33 @@ class DarkTempler {
 		this.hp = 100;
 	}
 
+	public String getNAME() {
+		return NAME;
+	}
+
+	public int getHp() {
+		return this.hp;
+	}
+
+	public void setHp(int hp) {
+		this.hp = hp;
+	}
+
+	public int getAttack() {
+		return attack;
+	}
+
+	@Override
+	public void setAttack(int attack) {
+		this.attack = attack;
+		
+	}
+
 }
 
-class River {
-	final String NAME;
-	int hp;
+class River extends Protoss {
+	private final String NAME;
+	private int hp;
 	static int attack = 70;
 
 	public River(String name) {
@@ -49,120 +128,37 @@ class River {
 		this.hp = 100;
 	}
 
+	public String getNAME() {
+		return NAME;
+	}
+
+	public int getHp() {
+		return this.hp;
+	}
+
+	public void setHp(int hp) {
+		this.hp = hp;
+	}
+
+	public int getAttack() {
+		return attack;
+	}
+
+	@Override
+	public void setAttack(int attack) {
+		this.attack = attack;
+		
+	}
+
 }
 
 public class GameStart {
 
-	// 질럿=>질럿
-	static void attack(Zealot u1, Zealot u2) {
-		u2.hp = u2.hp - u1.attack;
-		System.out.println(u2.NAME + "이 공격당하고 있습니다.");
-		System.out.println(u2.NAME + "의 체력은 " + u2.hp + "입니다.");
-	}
-
-	// 질럿=>드라군
-	static void attack(Zealot u1, Dragoon u2) {
-		u2.hp = u2.hp - u1.attack;
-		System.out.println(u2.NAME + "이 공격당하고 있습니다.");
-		System.out.println(u2.NAME + "의 체력은 " + u2.hp + "입니다.");
-	}
-
-	// 질럿=>다크템플러
-	static void attack(Zealot u1, DarkTempler u2) {
-		u2.hp = u2.hp - u1.attack;
-		System.out.println(u2.NAME + "이 공격당하고 있습니다.");
-		System.out.println(u2.NAME + "의 체력은 " + u2.hp + "입니다.");
-	}
-
-	// 질럿=>리버
-	static void attack(Zealot u1, River u2) {
-		u2.hp = u2.hp - u1.attack;
-		System.out.println(u2.NAME + "이 공격당하고 있습니다.");
-		System.out.println(u2.NAME + "의 체력은 " + u2.hp + "입니다.");
-	}
-
-	// 드라군=>질럿
-	static void attack(Dragoon u1, Zealot u2) {
-		u2.hp = u2.hp - u1.attack;
-		System.out.println(u2.NAME + "이 공격당하고 있습니다.");
-		System.out.println(u2.NAME + "의 체력은 " + u2.hp + "입니다.");
-	}
-
-	// 드라군=>드라군
-	static void attack(Dragoon u1, Dragoon u2) {
-		u2.hp = u2.hp - u1.attack;
-		System.out.println(u2.NAME + "이 공격당하고 있습니다.");
-		System.out.println(u2.NAME + "의 체력은 " + u2.hp + "입니다.");
-	}
-
-	// 드라군=>다크템플러
-	static void attack(Dragoon u1, DarkTempler u2) {
-		u2.hp = u2.hp - u1.attack;
-		System.out.println(u2.NAME + "이 공격당하고 있습니다.");
-		System.out.println(u2.NAME + "의 체력은 " + u2.hp + "입니다.");
-	}
-
-	// 드라군=>리버
-	static void attack(Dragoon u1, River u2) {
-		u2.hp = u2.hp - u1.attack;
-		System.out.println(u2.NAME + "이 공격당하고 있습니다.");
-		System.out.println(u2.NAME + "의 체력은 " + u2.hp + "입니다.");
-	}
-
-	// 다크템플러=>질럿
-	static void attack(DarkTempler u1, Zealot u2) {
-		u2.hp = u2.hp - u1.attack;
-		System.out.println(u2.NAME + "이 공격당하고 있습니다.");
-		System.out.println(u2.NAME + "의 체력은 " + u2.hp + "입니다.");
-	}
-
-	// 다크템플러=>드라군
-	static void attack(DarkTempler u1, Dragoon u2) {
-		u2.hp = u2.hp - u1.attack;
-		System.out.println(u2.NAME + "이 공격당하고 있습니다.");
-		System.out.println(u2.NAME + "의 체력은 " + u2.hp + "입니다.");
-	}
-
-	// 다크템플러=>다크템플러
-	static void attack(DarkTempler u1, DarkTempler u2) {
-		u2.hp = u2.hp - u1.attack;
-		System.out.println(u2.NAME + "이 공격당하고 있습니다.");
-		System.out.println(u2.NAME + "의 체력은 " + u2.hp + "입니다.");
-	}
-
-	// 다크템플러=>리버
-	static void attack(DarkTempler u1, River u2) {
-		u2.hp = u2.hp - u1.attack;
-		System.out.println(u2.NAME + "이 공격당하고 있습니다.");
-		System.out.println(u2.NAME + "의 체력은 " + u2.hp + "입니다.");
-	}
-
-	// 리버=>질럿
-	static void attack(River u1, Zealot u2) {
-		u2.hp = u2.hp - u1.attack;
-		System.out.println(u2.NAME + "이 공격당하고 있습니다.");
-		System.out.println(u2.NAME + "의 체력은 " + u2.hp + "입니다.");
-	}
-
-	// 리버=>드라군
-	static void attack(River u1, Dragoon u2) {
-		u2.hp = u2.hp - u1.attack;
-		System.out.println(u2.NAME + "이 공격당하고 있습니다.");
-		System.out.println(u2.NAME + "의 체력은 " + u2.hp + "입니다.");
-	}
-
-	// 리버=>다크템플러
-	static void attack(River u1, DarkTempler u2) {
-		u2.hp = u2.hp - u1.attack;
-		System.out.println(u2.NAME + "이 공격당하고 있습니다.");
-		System.out.println(u2.NAME + "의 체력은 " + u2.hp + "입니다.");
-	}
-
-	// 리버=>리버
-	static void attack(River u1, River u2) {
-		u2.hp = u2.hp - u1.attack;
-		System.out.println(u2.NAME + "이 공격당하고 있습니다.");
-		System.out.println(u2.NAME + "의 체력은 " + u2.hp + "입니다.");
+	// 공격
+	static void attack(Protoss u1, Protoss u2) {
+		u2.setHp(u2.getHp()-u1.getAttack());
+		System.out.println(u2.getNAME() + "이 공격당하고 있습니다.");
+		System.out.println(u2.getNAME() + "의 체력은 " + u2.getHp() + "입니다.");
 	}
 
 	public static void main(String[] args) {
@@ -170,9 +166,9 @@ public class GameStart {
 		Zealot.attack++;
 		// 질럿 생성하기
 		Zealot z1 = new Zealot("1번질럿");
-		System.out.println(Zealot.attack);
+		System.out.println(z1.getAttack());
 		Zealot z2 = new Zealot("2번질럿");
-		System.out.println(Zealot.attack);
+		System.out.println(z2.getAttack());
 		Dragoon d1 = new Dragoon("1번드라군");
 		Dragoon d2 = new Dragoon("2번드라군");
 		DarkTempler dk1 = new DarkTempler("1번다크템플러");
@@ -183,24 +179,7 @@ public class GameStart {
 
 		// 질럿 공격하기
 		attack(z1, z2);
-		attack(z1, d1);
-		attack(z1, dk1);
-		attack(z1, r1);
-		// 드라군 공격하기
-		attack(d1, z1);
-		attack(d1, d2);
-		attack(d1, dk1);
-		attack(d1, r1);
-		// 다크템플러 공격하기	
-		attack(dk1, z1);
-		attack(dk1, d2);
-		attack(dk1, dk2);
 		attack(dk1, r1);
-		// 리버 공격하기
-		attack(r1, z1);
-		attack(r1, d2);
-		attack(r1, dk1);
-		attack(r1, r2);
 	}
 
 }
