@@ -1,6 +1,5 @@
 package animal;
 
-
 interface 부서{
 	//도메인을 준다.
 	//공통 코드
@@ -15,5 +14,4 @@ public class TestInterfaceEx01 {
 	public static void main(String[] args) {
 		System.out.println(부서.총무과);
 	}
-
 }

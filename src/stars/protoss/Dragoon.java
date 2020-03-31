@@ -46,5 +46,4 @@ public class Dragoon extends Protoss {
 	public int getAttack() {
 		return attack;
 	}
-	
 }

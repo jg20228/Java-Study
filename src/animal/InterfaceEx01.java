@@ -17,5 +17,4 @@ public class InterfaceEx01 {
 	public static void main(String[] args) {
 		System.out.println(Cal.num);
 	}
-
 }

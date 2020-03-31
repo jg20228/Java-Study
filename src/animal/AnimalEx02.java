@@ -4,39 +4,25 @@ interface Animal {
 	// 규칙 2개 생성
 	void run();
 	void sound();
-	
 }
-
 class Dog implements Animal {
-
-	@Override
 	public void run() {
 		System.out.println("강아지 달린다");
 	}
-
-	@Override
 	public void sound() {
 		System.out.println("멍멍");
 	}
-
 }
 
 class Bird implements Animal{
-
 	void fly() {
 		System.out.println("새는 난다");		
-
 	}
-
-	@Override
 	public void run() {
 		System.out.println("새는 달린다");		
 	}
-
-	@Override
 	public void sound() {
 		System.out.println("짹짹");
-		
 	}
 }
 
@@ -56,8 +42,5 @@ public class AnimalEx02 {
 	public static void main(String[] args) {
 		start(new Dog());
 		start(new Bird());
-		
-		
 	}
-
 }
