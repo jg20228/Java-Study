@@ -8,15 +8,12 @@ public class StartGame {
 	public static void repair(Behavior b) {
 		b.repair();
 	}
-
 	public static void move(Behavior b) {
 		b.move();
 	}
-
 	public static void attack(Behavior b1, Behavior b2) {
 		b1.attack(b2);
 	}
-
 	public static void main(String[] args) {
 		Protoss.upgrade();
 		Zealot z1 = new Zealot("Áú·µ1");
@@ -27,7 +24,6 @@ public class StartGame {
 		repair(z1);
 		// Áú·µ->µå¶ó±º
 		attack(z1, d1);
-		attack(m1, t1);
+		
 	}
-
 }

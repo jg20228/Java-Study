@@ -13,11 +13,10 @@ public class Zealot extends Protoss {
 		this.hp = 100;
 		this.sh = 100;
 	}
-
-	@Override
 	public void attack(Behavior b1) {
 		b1.setHp(b1.getHp()-this.getAttack());
-		System.out.println(b1.getName()+" HP= "+b1.getHp());
+		System.out.println("공격자 : "+this.getName()+" 공격력 "+this.getAttack()
+		+" 피격자 : "+b1.getName()+" HP= "+b1.getHp());
 	}
 
 	public String getName() {

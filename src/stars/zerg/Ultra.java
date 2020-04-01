@@ -11,8 +11,9 @@ public class Ultra extends Zerg{
 		this.name = name;
 		this.hp = 100;
 	}
-	public void attack(Behavior unit) {
-		System.out.println("근거리 공격");
+	public void attack(Behavior b1) {
+		b1.setHp(b1.getHp()-this.getAttack());
+		System.out.println("공격자 : "+this.getName()+" 공격력 "+this.getAttack()+" 피격자 : "+b1.getName()+" HP= "+b1.getHp());
 	}
 	
 	public String getName() {

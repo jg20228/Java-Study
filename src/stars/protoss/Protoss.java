@@ -3,11 +3,9 @@ package stars.protoss;
 import stars.Behavior;
 
 public abstract class Protoss implements Behavior{
-	@Override
 	public void move() {
 		System.out.println("이동");
 	}
-	@Override
 	public void repair() {
 		System.out.println("쉴드치료");
 	}

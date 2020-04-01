@@ -17,6 +17,7 @@ class Dog implements Animal {
 class Bird implements Animal{
 	void fly() {
 		System.out.println("새는 난다");		
+
 	}
 	public void run() {
 		System.out.println("새는 달린다");		

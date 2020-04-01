@@ -9,7 +9,7 @@ public abstract class Zerg implements Behavior{
 	public void repair() {
 		System.out.println("자연 치료");
 	}
-//	public abstract void attack();
+	public abstract void attack(Behavior b);
 	
 	public static void upgrade() {
 		Hydra.attack++;
