@@ -1,5 +1,6 @@
 package composite;
 
+
 public class BigBurger extends Burger {
 
 	public BigBurger() {

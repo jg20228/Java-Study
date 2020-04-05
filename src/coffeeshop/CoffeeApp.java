@@ -22,5 +22,6 @@ public class CoffeeApp {
 		Menu menu = new Menu(menuItems);
 		// System.out.println(menuItems.get(1).getName());
 		consumer.주문("아메리카노", menu, barista);
+
 	}
 }

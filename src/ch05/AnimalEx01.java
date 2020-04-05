@@ -41,7 +41,6 @@ public class AnimalEx01 {
 
 	}
 
-	// stars를 보면 오버로딩의 한계를 해결
 	public static void main(String[] args) {
 		Dog d1 = new Dog();
 		Cat c1 = new Cat();
