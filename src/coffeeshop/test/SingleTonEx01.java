@@ -16,5 +16,11 @@ public class SingleTonEx01 {
 
 	public static void main(String[] args) {
 		대통령 d1 = 대통령.getInstance();
+		대통령 d2 = 대통령.getInstance();
+		
+		
+		System.out.println(d1);
+		System.out.println(d2);
+		
 	}
 }

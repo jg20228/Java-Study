@@ -2,7 +2,7 @@ package sbs;
 
 import java.util.*;
 
-public class Main {
+public class Main{
 
 	public static void main(String[] args) {
 	Student st1 = new Student("°¡³ª","1234");
