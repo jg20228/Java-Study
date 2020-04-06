@@ -19,7 +19,7 @@ public class LotteriaApp {
 //						new Coke(),
 //						new FrenchFried()
 //					);
-		System.out.println(set1.getBigBurger().getPrice());
+//	 	System.out.println(set1.getBigBurger().getPrice());
 
 		//BigBurgerSet 추가 2000원 할인쿠폰
 		BigBurgerSet set3 = new BigBurgerSet(new BigBurger(2000,"빅버거할인"));

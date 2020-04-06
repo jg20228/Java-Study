@@ -4,7 +4,6 @@ package coffeeshop;
 public class Consumer {
 
 	public void 주문(String menuName, Menu menu, Barista barista) {
-		
 		//손님 -> 메뉴판 메시지 보낸다. (메뉴 선택해줘)
 		MenuItem menuItem = menu.메뉴선택(menuName);
 		if(menuItem == null) {

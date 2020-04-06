@@ -9,6 +9,7 @@ public class Coffee {
 
 	public Coffee() {
 	}
+
 	public Coffee(MenuItem menuItem) {
 		this.name = menuItem.getName();
 		this.price = menuItem.getPrice();
