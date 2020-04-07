@@ -12,9 +12,5 @@ import lombok.NoArgsConstructor;
 public class MenuItem {
 	private String name;
 	private int price;
-<<<<<<< HEAD
-=======
 
->>>>>>> 95a3dff5adebc916a8ad87916aafa6dc49fc6f93
-	
 }
