@@ -49,20 +49,17 @@ public class AirplaneApp {
 	}
 
 	public static void main(String[] args) {
-		String depAirportId = "NAARKJJ";
-		String arrAirportId = "NAARKPC";
+		
+		
+		String depAirportId = "NAARKJJ";//제주
+		String arrAirportId = "NAARKPC";//부산 공항목록 조회,바꿔치기
+		
 		Integer depPlandTime = 20200407;
 		AirplaneInfo airplaneInfo = getFlightInfo(depAirportId,arrAirportId,depPlandTime);
 		Item item1 = new Item();
 		System.out.println(item1.getAirlineNm());
 		System.out.println(airplaneInfo.getResponse().getBody().getItems().getItem());
-		int n= 0;
-		for (Item item : airplaneInfo.getResponse().getBody().getItems().getItem()) {
-			n++;
-			System.out.println("테스트 "+n);
-			System.out.println(item.getAirlineNm());
-		}
-		
+
 		
 //		for (Item item : airplaneInfo.getResponse().getBody().getItems().getItem()) {
 //			System.out.println("항공사 : "+item.getAirlineNm());
