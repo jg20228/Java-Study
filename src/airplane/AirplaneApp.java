@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 
 import com.google.gson.Gson;
 
@@ -58,17 +59,21 @@ public class AirplaneApp {
 		AirplaneInfo airplaneInfo = getFlightInfo(depAirportId,arrAirportId,depPlandTime);
 		Item item1 = new Item();
 		System.out.println(item1.getAirlineNm());
-		System.out.println(airplaneInfo.getResponse().getBody().getItems().getItem());
+		System.out.println(airplaneInfo.getResponse().getBody().getItems().getItem().get(0).getAirlineNm());
 
+		List<Item> temp = airplaneInfo.getResponse().getBody().getItems().getItem();
 		
-//		for (Item item : airplaneInfo.getResponse().getBody().getItems().getItem()) {
-//			System.out.println("항공사 : "+item.getAirlineNm());
-//			System.out.println("출발지 : "+item.getDepAirportNm());
-//			System.out.println("도착지 : "+item.getArrAirportNm());
-//			System.out.println("출발시간 : "+item.getDepPlandTime());
-//			System.out.println("도착시간 : "+item.getArrPlandTime());
-//			System.out.println("요금 : "+item.getEconomyCharge());
-//			System.out.println();
-//		}
+		System.out.println("크기 : "+temp.size());		
+		System.out.println(temp.get(13).getArrAirportNm());
+		
+		for (Item item : airplaneInfo.getResponse().getBody().getItems().getItem()) {
+			System.out.println("항공사 : "+item.getAirlineNm());
+			System.out.println("출발지 : "+item.getDepAirportNm());
+			System.out.println("도착지 : "+item.getArrAirportNm());
+			System.out.println("출발시간 : "+item.getDepPlandTime());
+			System.out.println("도착시간 : "+item.getArrPlandTime());
+			System.out.println("요금 : "+item.getEconomyCharge());
+			System.out.println();
+		}
 	}
 }
