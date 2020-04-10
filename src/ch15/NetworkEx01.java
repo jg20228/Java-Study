@@ -45,7 +45,7 @@ public class NetworkEx01 {
 			//People p = gson.fromJson(jsonData, People.class);
 			Gson gson = new Gson();
 			NetwroktoJson a = gson.fromJson(sb.toString(),NetwroktoJson.class);
-			System.out.println(a.getResponse().getBody().getItems().getItem());
+			//System.out.println(a.getResponse().getBody().getItems().getItem());
 			
 			
 		} catch (Exception e ) {
