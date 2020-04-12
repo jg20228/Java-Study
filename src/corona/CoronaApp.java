@@ -1,7 +1,7 @@
 package corona;
 
 import java.io.BufferedReader;
-
+import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -21,10 +21,13 @@ public class CoronaApp {
 			// 3번 버퍼 연결 (문자열)
 			BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
 			// 4. 문자 더하기
+			
+			FileWriter fr = new FileWriter("C:\\src\\test.html");
 			StringBuilder sb = new StringBuilder();
 			String input = "";
 			while ((input = br.readLine()) != null) {
-				sb.append(input);
+					sb.append(input);
+					fr.append(input);
 			}
 			br.close(); // 버퍼 닫기
 			con.disconnect(); // 스트림 닫기
@@ -38,29 +41,51 @@ public class CoronaApp {
 		}
 		return null;
 	}
-
+	public static String checkCode(String code, ArrayList<MaskInfo> maskInfos) {
+		for (int i = 0; i < 30; i++) {
+			for (int j = 0; j < 500; j++) {
+				if(code.equals((maskInfos.get(i).getSales().get(j).getCode()))){
+					System.out.println(i+"  "+j);
+					System.out.println(maskInfos.get(i).getSales().get(j).getRemain_stat());
+				}
+			}
+			
+		}
+		
+		return code;
+	}
 	public static void main(String[] args) {
-		System.out.println("지역을 입력하세요.");
-		Scanner sc = new Scanner(System.in);
-		String addr = sc.next();
-
+		System.out.println("로딩중");
 		int page = 1;
+		ArrayList<MaskInfo> maskInfos = new ArrayList<>();
+		for (int i = 0; i < 30; i++) {
+			MaskInfo maskInfo = TestApp.getMaskInfo(page);
+			page++;
+			maskInfos.add(maskInfo);
+		}
+		
+//		System.out.println("지역을 입력하세요.");
+//		Scanner sc = new Scanner(System.in);
+//		String addr = sc.next();
+		String addr = "부산";
 		ArrayList<CoronaInfo> coronaInfos = new ArrayList<>();
 
+		page = 1;
 		for (int i = 0; i < 54; i++) {
 			CoronaInfo coronaInfo = getCoronaInfo(page);
 			page++;
 			coronaInfos.add(coronaInfo);
+			System.out.println(page);
 		}
 
-		coronaInfos.get(0).getStoreInfos().get(0).getAddr();
 		for (CoronaInfo coronaInfo : coronaInfos) { 
 			List<StoreInfos> storeInfos = coronaInfo.getStoreInfos();
 
 			for (StoreInfos item : storeInfos) { 
 				if(item.getAddr().contains(addr)) {
 					System.out.println("위치 : "+item.getAddr());
-					System.out.println("코드 : "+item.getCode());
+					checkCode(item.getCode(),maskInfos);
+//					System.out.println("코드 : "+item.getCode());
 					System.out.println("이름 : "+item.getName());
 					System.out.println();
 				}

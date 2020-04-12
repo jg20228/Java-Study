@@ -1,6 +1,7 @@
 package corona;
 
 import java.util.List;
+
 import lombok.Data;
 @Data
 public class CoronaInfo {
@@ -9,7 +10,7 @@ public class CoronaInfo {
 	private List<StoreInfos> storeInfos = null;
 	private int totalCount;
 	private int totalPages;
-	
+
 }
 
 @Data
@@ -21,3 +22,4 @@ class StoreInfos{
 	private String name;
 	private String type;
 }
+
