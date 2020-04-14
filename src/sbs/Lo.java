@@ -41,8 +41,20 @@ public class Lo {
 			System.out.print(lo2[i] + " ");
 		}
 		System.out.println();
-		for (int i = 0; i < lo.length; i++) {
-			System.out.print(lo[i] + " ");
+		int temp=0;
+		for (int i = 0; i < lo2.length; i++) {
+			System.out.println(i);
+			for (int j = 0; j < lo2.length; j++) {
+				if(lo[i]>lo[j]) {
+					temp = lo[i];
+					lo[i] = lo[j];
+					lo[j] = temp;
+				}
+			}
+		}
+		System.out.println();
+		for (int i = 0; i < lo2.length; i++) {
+			System.out.print(lo2[i] + " ");
 		}
 	}
 }

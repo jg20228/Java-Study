@@ -57,7 +57,6 @@ public class MySocketServer {
 					}
 				}
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -68,7 +67,6 @@ public class MySocketServer {
 		try {
 			new MySocketServer();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
