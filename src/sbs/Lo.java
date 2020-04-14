@@ -7,12 +7,19 @@ import java.util.Random;
 
 public class Lo {
 	
-	public static int RandomInt() {
+	public static int RandomInt() {//1~45
 		Random ran = new Random();
 		int random = ran.nextInt(45);
 		return random;
 	}
 
+	public static int[] init(int[] lo) {//초기화
+		for (int i = 0; i < lo.length; i++) {
+			lo[i] = i + 1;
+		}
+		return lo;
+	}
+	
 	public static void main(String[] args) {
 
 		Random ran = new Random();
@@ -33,28 +40,28 @@ public class Lo {
 				count++;
 			}
 			if (count == 6) {
-				
+				lo = init(lo);//초기화
 				break;
 			}
 		}
 		for (int i = 0; i < lo2.length; i++) {
 			System.out.print(lo2[i] + " ");
 		}
-		System.out.println();
+		
+		//버블정렬
 		int temp=0;
 		for (int i = 0; i < lo2.length; i++) {
-			System.out.println(i);
-			for (int j = 0; j < lo2.length; j++) {
-				if(lo[i]>lo[j]) {
-					temp = lo[i];
-					lo[i] = lo[j];
-					lo[j] = temp;
+			for (int j = 0; j < lo2.length-1; j++) {
+				if(lo2[j]>lo2[j+1]) {
+					temp=lo2[j];
+					lo2[j]=lo2[j+1];
+					lo2[j+1]=temp;
 				}
 			}
 		}
 		System.out.println();
 		for (int i = 0; i < lo2.length; i++) {
 			System.out.print(lo2[i] + " ");
-		}
+		}	
 	}
 }
