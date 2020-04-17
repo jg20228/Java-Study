@@ -2,7 +2,6 @@ package ch06;
 
 class Animal {
 	public int hashCode() {
-		// TODO Auto-generated method stub
 		return super.hashCode();
 	}
 }
