@@ -45,7 +45,6 @@ public class EventExOpenChallenge extends JFrame {
 					for (int i = 0; i < keyMessage.length; i++) {
 						int x = (int)(Math.random()*5);
 						keyMessage[i].setText(x+"");
-						System.out.println(keyMessage[i].getText());
 					}
 					if(keyMessage[0].getText().equals(keyMessage[1].getText()) && keyMessage[1].getText().equals(keyMessage[2].getText())){
 						la.setText("축하합니다");
