@@ -3,7 +3,7 @@ package sbs;
 class Quick {
 
 	static int A[] = { 40, 30, 100, 60, 80, 70, 90, 10, 20, 50 };
-	
+
 	static int Partition(int A[], int start, int end) {
 		int pivot = A[end];
 		int index = start;
@@ -27,13 +27,13 @@ class Quick {
 		int index;
 		if (start < end) {
 			index = Partition(A, start, end);
-			QuickSort(A, start, index-1);
+			QuickSort(A, start, index - 1);
 			QuickSort(A, index + 1, end);
 		}
 	}
 
 	public static void main(String[] args) {
-		
+
 		for (int i = 0; i < A.length; i++) {
 			System.out.print(A[i] + " ");
 		}

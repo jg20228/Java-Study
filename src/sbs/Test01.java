@@ -1,54 +1,20 @@
 package sbs;
 
-interface Animal {
-	void sound();
-}
+import java.util.Scanner;
 
-class Tiger implements Animal {
-	@Override
-	public void sound() {
-		System.out.println("어흥");
-	}
-}
-
-class Dog implements Animal{
-	//부모가 가진 함수를 재정의 하는 것을 오버라이딩이라고 함.
-	//부모가 가진 함수를 재정의 하지 않아도 오버라이딩!!
-	public void sound(){
-		System.out.println("멍멍");
-	}
-}
-
-class Cat implements Animal{
-	public void sound(){
-		System.out.println("야옹");
-	}
-}
-
-class Fish implements Animal{
-	public void sound(){
-		System.out.println("뻐끔뻐끔");
-	}
-}
-
-public class Test01 {
-	
-	public static void start(Animal a){
-		a.sound();
-	}
-	
+class Test01 {
 	public static void main(String[] args) {
-		start(new Fish());
-		start(new Cat());
-		start(new Dog());
-		start(new Tiger());
-//		Animal f = new Fish();
-//		f.sound();
-//		
-//		Animal c = new Cat();
-//		c.sound();
-//		
-//		Animal d = new Dog();
-//		d.sound();
+		int [] unit = {50000,10000,1000,500,100,50,10,1};
+		
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int money=a;
+		for (int i = 0; i < unit.length; i++) {
+			if(money/unit[i]>=1) {
+				System.out.println(unit[i]+"원 짜리 : "+money/unit[i]+"개");
+				money=money-money/unit[i]*unit[i];
+			}
+			
+		}
 	}
 }

@@ -8,8 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-public class EventEx02 extends JFrame implements ActionListener{
-	
+public class EventEx02 extends JFrame implements ActionListener {
 
 	public EventEx02() {
 		setTitle("Action 이벤트 리스너 예제");
@@ -28,14 +27,15 @@ public class EventEx02 extends JFrame implements ActionListener{
 		setVisible(true);
 
 	}
-	//타겟 (EventEx02 가 가지고 있음)
+
+	// 타겟 (EventEx02 가 가지고 있음)
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("버튼 클릭됨");
 	}
+
 	public static void main(String[] args) {
 		new EventEx02();
 	}
-
 
 }
