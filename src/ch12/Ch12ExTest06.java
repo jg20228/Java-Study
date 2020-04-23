@@ -18,6 +18,7 @@ import org.w3c.dom.NodeList;
 
 public class Ch12ExTest06 extends JFrame {
 	static String a ="";
+	static String c ="";
 	private MyPanel panel = new MyPanel();
 
 	public Ch12ExTest06() {
@@ -33,10 +34,11 @@ public class Ch12ExTest06 extends JFrame {
 	}
 
 	class MyPanel extends JPanel {
+		int b = Integer.parseInt(a);
 		int min = 1;
 		int max = 1;
-		String stdYymm = a; // 날짜 연결
-		int height = 200 * (min / max); // 숫자 데이터 연결
+		String stdYymm = c; // 날짜 연결
+		int height = b/100; // 숫자 데이터 연결
 
 		@Override
 		protected void paintComponent(Graphics g) {
@@ -45,7 +47,7 @@ public class Ch12ExTest06 extends JFrame {
 			for (int i = 0; i < 10; i++) {
 				g.setColor(Color.RED);
 				g.fillRect((40 * i) + 20, 500 - height, 20, height); // (x,y,width,height)
-				g.drawString(stdYymm + (i + ""), (40 * i) + 20, 520); // (x,y)
+				g.drawString(stdYymm + (i + ""), (40*i) + 20, 520); // (이름,x,y)
 			}
 
 		}
@@ -85,8 +87,9 @@ public class Ch12ExTest06 extends JFrame {
 						Element eElement = (Element) nNode;
 						System.out.println("######################");
 						// System.out.println(eElement.getTextContent());
+						c=(getTagValue("nationNm", eElement));
+						System.out.println(c);
 						ab=getTagValue("imxprtWt", eElement);
-						//ab.add(getTagValue("imxprtWt", eElement));
 						//System.out.println("수량  : " + getTagValue("imxprtWt", eElement));
 					} // for end
 				} // if end
