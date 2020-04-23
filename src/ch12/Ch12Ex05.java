@@ -30,6 +30,7 @@ public class Ch12Ex05 extends JFrame {
 		@Override
 		protected void paintComponent(Graphics g) {
 			super.paintComponent(g);
+			
 			for (int i = 0; i < 10; i++) {
 				g.setColor(Color.RED);
 				g.fillRect((40 * i) + 20, 500 - height, 20, height); // (x,y,width,height)
