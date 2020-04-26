@@ -80,7 +80,7 @@ public class TestEx01 extends JFrame {
 	}
 
 	public void toSend(String phoneNumber, String text) {
-		System.out.println(phoneNumber+text);
+		System.out.println(phoneNumber + text);
 		String api_key = "";
 		String api_secret = "";
 		Message coolsms = new Message(api_key, api_secret);
