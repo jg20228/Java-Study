@@ -23,6 +23,7 @@ public class UpdateEx1 {
 			pstmt.setInt(2, 2);
 			//버퍼에 쓰기 (commit)
 			pstmt.executeUpdate(); //-autoFlush
+			conn.close();
 			System.out.println("업데이트 완료");
 		} catch (Exception e) {
 			e.printStackTrace();

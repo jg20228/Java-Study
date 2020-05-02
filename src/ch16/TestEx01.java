@@ -1,5 +1,5 @@
 package ch16;
-
+//접근하는 과정
 class MyConnection {
 }
 
