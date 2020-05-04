@@ -1,5 +1,10 @@
 package project3;
 
-public class Field {
+abstract public class Field {
+	void a() {
+	}
+}
 
+class A extends Field{
+	
 }
