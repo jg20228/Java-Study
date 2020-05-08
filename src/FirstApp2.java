@@ -7,6 +7,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
+import javax.swing.JMenuBar;
+import javax.swing.JPanel;
 
 public class FirstApp2 {
 
@@ -49,23 +51,21 @@ public class FirstApp2 {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton.setBounds(111, 549, 139, 43);
+		btnNewButton.setBounds(0, 581, 202, 64);
 		frame.getContentPane().add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("\uC7AC\uACE0");
-		btnNewButton_1.setBounds(37, 251, 293, 158);
+		JButton btnNewButton_1 = new JButton("\uC885\uB8CC");
+		btnNewButton_1.setBounds(199, 581, 202, 64);
 		frame.getContentPane().add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("\uBA54\uB274");
-		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnNewButton_2.setBounds(30, 120, 300, 97);
+		JButton btnNewButton_2 = new JButton("\uC885\uB8CC");
+		btnNewButton_2.setBounds(400, 581, 202, 64);
 		frame.getContentPane().add(btnNewButton_2);
 		
-		JButton btnNewButton_3 = new JButton("\uC870\uD68C");
-		btnNewButton_3.setBounds(45, 419, 300, 77);
-		frame.getContentPane().add(btnNewButton_3);
+		JPanel panel = new JPanel();
+		panel.setBounds(242, 157, 234, 195);
+		frame.getContentPane().add(panel);
+		
+
 	}
 }
